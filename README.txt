@@ -1,6 +1,6 @@
 Academic CV Template
 
-Author: Dubasi Pavan Kumar
+Author: ShyamKumar
 
 Description:
 This LaTeX template is designed for creating professional academic CVs. It provides a clean, organized structure for showcasing your academic achievements, research experience, publications, and more. The template is highly customizable, allowing you to tailor it to your specific needs and academic field.
@@ -29,8 +29,6 @@ Customization:
 
 For detailed customization instructions, please refer to the comments within the LaTeX file.
 
-If you have any questions or suggestions for improvement, please contact the author:
-Email: pavankumard.pg19.ma@nitp.ac.in
-LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+
 
 We hope this template helps you create a standout academic CV. Good luck with your academic endeavors!
