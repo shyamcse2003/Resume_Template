@@ -1,0 +1,323 @@
+%
+%Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar
+% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+% License: MIT
+%
+% For errors, suggestions, or improvements, please contact:
+% Email: pavankumard.pg19.ma@nitp.ac.in
+%
+
+
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{VINOD PAMIDISETTI}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    +91 8465952519 | \href{mailto:youremail@example.com}{vinodpydisetty@gmail.com} | 
+    }
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/vinod-pydisetty-326414252/}{vinod-pydisetty-326414252} | 
+    \socialicon{\faGithub} \href{https://github.com/vinodpydisetty}{vinodpydisetty} 
+    }
+\end{center}
+\vspace{-1mm}
+
+\vspace{-4mm}
+
+\section{\textbf{Objective}}
+\vspace{0.5mm}
+\small{
+A motivated and disciplined student eager to start my career in software. I'm looking for an entry-level position where I can apply my skills, grow professionally, and contribute effectively to the organization.
+}
+\vspace{-3mm}
+
+\section{\textbf{Fellowship}}
+\vspace{-0.4mm}
+  \resumeSubHeadingListStart
+  \item \textbf{HyperVerge} \hfill \textbf{July 2024 - Present}
+      \resumeItemListStart
+        \item Front-End Development Skills: Able to build responsive and easy-to-use web applications with HTML, CSS, and JavaScript, focusing on clean and organized code.
+        \item React Framework Knowledge: Created interactive user interfaces with React, using a component-based structure to make code more reusable and efficient.
+        \item Strong abilities in problem-solving, communication, and adaptability, with a focus on continuous learning and effective collaboration in team settings.
+
+        
+      \resumeItemListEnd 
+  
+  \resumeSubHeadingListEnd
+\vspace{-8mm}
+
+
+\section{\textbf{Skills}}
+\vspace{0.5mm}
+
+\resumeHeadingSkillStart
+
+\resumeSubItem{Programming Languages:}
+{Python.}
+\resumeSubItem{Web Development:}
+{HTML \& CSS,\ JavaScript.}
+\resumeSubItem{Frameworks:}
+{\ ReactJS.}
+
+
+\resumeSubItem{Database Systems:}
+{MySQL.}
+
+\resumeSubItem{Version Control:}
+{Git, \ Github.}
+\resumeSubItem{Fundamentals:}
+{ Knowledge of Operating Systems, Computer Networks, and Data Structures.}
+
+  \resumeHeadingSkillEnd
+  
+\vspace{-2mm}
+\section{\textbf{Education}}
+\vspace{0.5mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Rajiv Gandhi University of Knowledge
+Technologies, IIIT Nuzvid}{Andhra Pradesh, India}
+{B.Tech, Computer Science and Engineering}{December 2020 - April 2024}
+\resumeItemListStart
+\item CGPA: 8.1
+\resumeItemListEnd
+
+\resumeSubheading
+{Rajiv Gandhi University of Knowledge
+Technologies, IIIT Nuzvid}{Andhra Pradesh, India}
+{Pre-University Education}{August 2018 - November 2020}
+\resumeItemListStart
+\item CGPA: 7.5
+\resumeItemListEnd
+
+\resumeSubheading
+{Zilla Parishad High School, Kasibugga}{Andhra Pradesh, India}
+{Secondary School Education}{March 2018}
+\resumeItemListStart
+\item CGPA:10.0
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-8mm}
+
+\section{\textbf{Projects}}
+\vspace{0.5mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {MULTIPLE DISEASE PREDICTION SYSTEM}
+  {Tools: Python(Streamlit),Machine Learning}{Oct 2023}
+  {{}[\href{https://github.com/rajesh-eegala/ExpenSyncDeploy}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Disease Prediction System: The project aims to develop a system that predicts three common medical conditions using machine learning algorithms.
+  \item Data Analysis: The system will analyze patient health parameters and medical histories to provide accurate predictions.
+  \item User Interface: The system will feature a user-friendly interface built with Streamlit, allowing easy interaction for users.
+
+\resumeItemListEnd
+
+\resumeProject
+  {RealEstate Hub}
+  {Tools: MERN Stack, Redux Toolkit, JWT, Firebase, Google Authentication}
+  {January 2024}
+  {{}[\href{https://github.com/OpenTechXLabs/Smart-HR-System.git}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Property Management Platform: Developed a user-friendly MERN stack website for browsing, buying, and selling properties.
+  \item Efficient State Management: Implemented Redux Toolkit for efficient state management, ensuring seamless user experience.
+  \item Security \& User Authentication: Integrated JWT for secure authentication and Firebase for Google login and image storage.
+
+
+
+
+
+
+
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-8mm}
+
+
+\section{\textbf{Certifications}}
+\vspace{1mm}
+\resumeSubHeadingListStart
+\resumePOR{}{\href{https://drive.google.com/file/d/1PIhkUjX1uEWfRFrpBTBO-1Fn3u14ps27/view}{
+\textbf{Achieved NCC - C certificate with grade A}
+}}{June 2018 - May 2022}
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Interests \& Languages}}
+\vspace{1mm}
+\small{
+
+\textbf{Interests:} {Reading Fiction, Morning workouts}
+\\
+\textbf{Languages:} {English ,Telugu, Hindi}
+}
+
+
+
+\vspace{-4mm}
+
+
+
+
+\end{document}
